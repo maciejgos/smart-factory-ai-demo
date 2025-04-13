@@ -23,7 +23,7 @@ Once the manager approves a maintenance plan, the Executor Agent updates schedul
 
 The demo is built on the .NET platform and adopts a modular, service-oriented architecture with clearly defined responsibilities for each agent:
 
-![alt text](image.png)
+![alt text](docs/hld/image.png)
 
 This architecture ensures that data flows seamlessly between simulated sensor data, anomaly detection, planning, and the natural language interface, allowing for dynamic and interactive management of maintenance activities.
 
