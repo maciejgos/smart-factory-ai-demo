@@ -8,6 +8,7 @@ var configuration = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
     .Build();
 
+string deploymentName = "gpt-4o";
 string endpoint = configuration["AzureOpenAI:Endpoint"] ?? string.Empty;
 string apiKey = configuration["AzureOpenAI:ApiKey"] ?? string.Empty;
 if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
@@ -16,5 +17,6 @@ if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
     Environment.Exit(1);
 }
 
-builder.AddAzureOpenAIChatCompletion("gpt-4o", endpoint, apiKey);
+
+builder.AddAzureOpenAIChatCompletion(deploymentName, endpoint, apiKey);
 var kernel = builder.Build();
