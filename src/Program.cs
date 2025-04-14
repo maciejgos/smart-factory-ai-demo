@@ -13,7 +13,7 @@ string apiKey = configuration["AzureOpenAI:ApiKey"] ?? string.Empty;
 if (string.IsNullOrEmpty(endpoint) || string.IsNullOrEmpty(apiKey))
 {
     Console.WriteLine("Please set the Azure OpenAI endpoint and API key in user secrets.");
-    return;
+    Environment.Exit(1);
 }
 
 builder.AddAzureOpenAIChatCompletion("gpt-4o", endpoint, apiKey);
